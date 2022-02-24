@@ -1,0 +1,40 @@
+<% @posts.each do |post| %>
+<div>
+    <%=post.title%>
+    <%=post.content%>
+    <a href="/modify/<%=post.id%>">수정하기</a>
+    <a href="/delete/<%=post.id%>">삭제하기</a>
+</div>
+
+<% end %>
+</br>
+<a href='/write'>글쓰기 페이지로 이동</a>
+
+
+<form action="/update/<%=@post.id%>" method="post">
+  제목: <input type="text" name="title" placeholder=<%=@post.title%> /> <br />
+  내용 : <input type="text" name="content" placeholder=<%=@post.content%> /><br />
+  <input type="submit" />
+</form>
+
+
+<div><%= @calResult2 %></div>
+</br>
+
+
+<div>this is hi page</div>
+
+<div> <%= @message %> </div>
+
+<div>
+    <% if @showMessage %>
+    <div>하하</div>
+    <% end %>
+
+
+<div>write 페이지</div>
+<form action="/create" method="post">
+  제목: <input type="text" name="title" /> <br />
+  내용 : <input type="text" name="content" /><br />
+  <input type="submit" />
+</form>

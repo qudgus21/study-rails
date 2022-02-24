@@ -1,0 +1,284 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  header{
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  >div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .button{
+      width: 70%;
+      text-align: right;
+      margin-top: 50px;
+
+      a{
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        background-color: #e6e6e6;
+
+        &:hover{
+          background-color : #999999;
+        }
+
+        border-radius: 20px;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .index{
+
+    .search{
+      margin-top: 3vh;
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .total{}
+
+      form{
+        input{
+          margin-left: 1vw;
+
+          border: none;
+          border: 1px solid #999999;
+          padding: 0.5rem;
+          border-radius: 10px;
+        }
+
+        input[type=text] {
+          width: 15vw;
+        }
+
+
+        input[type=submit] {
+          border: none;
+          cursor: pointer;
+          &:hover{
+            background-color : #999999;
+          }
+        }
+      }
+    }
+  }
+
+  .detailWrapper{
+    .tomain{
+      margin-bottom: 50px;
+    }
+
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >.title{
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+
+      >div:first-child{
+        font-size: 1.5vw;
+      }
+
+      >div:last-child{
+        display: flex;
+        gap: 10px;
+
+        .button{
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+
+          &:first-child{
+            background-color: rgb(211, 238, 255);
+            &:hover{
+              background-color : rgb(174, 195, 210);
+            }
+          }
+
+          &:last-child{
+            background-color: #e6e6e6;
+            &:hover{
+              background-color : #999999;
+            }
+          }
+
+
+          border-radius: 20px;
+          padding: 10px 20px;
+        }
+
+      }
+
+      margin-bottom: 2vh;
+    }
+
+    .commentWrapper{
+      width: 50%;
+
+      .comment{
+        margin-top: 3vh;
+        border-bottom: 1px solid #999999;
+        padding-bottom: 1vh;
+        form{
+          display: flex;
+          flex-direction: column;
+          input, textarea{
+            border: none;
+            border: 1px solid #999999;
+            margin-bottom: 2vh;
+            padding: 0.5rem;
+            border-radius: 10px;
+          }
+
+          textarea{
+            margin-bottom: 0;
+            margin-bottom: 2vh;
+          }
+
+          input{
+            width: 15%;
+          }
+
+          input[type=submit] {
+            width: 20%;
+            cursor: pointer;
+            padding: 0.2rem;
+            align-self: flex-end;
+            &:hover{
+              background-color : #999999;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    .contentWrapper{
+      width: 50%;
+
+      .title{
+        border-top: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+        padding: 5px 15px;
+        font-size: 2vw;
+        background-color: #e6e6e6;
+      }
+
+      .info{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 15px;
+        border-bottom: 1px solid #999999;
+        font-size: 1vw;
+      }
+
+      .content{
+        min-height: 25vh;
+        padding: 20px 15px;
+        border-bottom: 1px solid #999999;
+      }
+    }
+  }
+
+  .writeWrapper{
+    margin-top: 5vh;
+    text-align: center;
+
+    .title{
+      font-size: 1.5vw;
+      margin-bottom: 2vh;
+    }
+
+    form{
+      input, textarea{
+        border: none;
+        width: 30vw;
+        border: 1px solid #999999;
+        margin-bottom: 2vh;
+        padding: 1rem;
+        border-radius: 20px;
+      }
+
+      input[type=submit] {
+        cursor: pointer;
+        &:hover{
+          background-color : #999999;
+        }
+      }
+    }
+  }
+
+  table{
+    margin-top: 4vh;
+    border-collapse: collapse;
+    width: 70%;
+
+    tbody{
+      cursor: pointer;
+    }
+
+    a{
+      display: block;
+      color: black;
+      text-decoration: none;
+    }
+
+    th, tr{
+      border-bottom: 1px solid black;
+
+      td{
+        padding: 1.5vh 0;
+        &:first-child{
+          padding-left : 10px;
+        }
+
+        &:nth-child(2){
+          text-align: center;
+        }
+
+        &:nth-child(3){
+          text-align: center;
+        }
+
+        &:last-child{
+          text-align: center;
+        }
+      }
+
+      &:first-child{
+        width: 40%;
+      }
+
+      &:nth-child(2){
+        width: 14%;
+      }
+
+      &:nth-child(3){
+        width: 23%;
+      }
+
+      &:last-child{
+        width: 23%;
+      }
+    }
+  }
+}
+

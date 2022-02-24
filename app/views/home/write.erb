@@ -1,0 +1,35 @@
+<section class="writeWrapper">
+    <div class="title">
+         <% if @post %>
+            글 수정하기
+         <% else %>
+            글 작성하기
+         <% end %>
+    </div>
+    <% if @post %>
+        <form action="/post/write/<%=@post.id%>" method="post">
+    <% else %>
+        <form action="/post/write" method="post">
+    <% end %>
+    <% if @post %>
+        <input type="text" name="title" placeholder="제목" value="<%=@post.title%>" required/></br>
+    <% else %>
+        <input type="text" name="title" placeholder="제목" required/></br>
+    <% end %>
+    <% if @post %>
+        <input type="text" name="creator" placeholder="작성자" value="<%=@post.creator%>" required/></br>
+    <% else %>
+        <input type="text" name="creator" placeholder="작성자" required/></br>
+    <% end %>
+    <% if @post %>
+        <textarea type="text" name="content" rows=20 placeholder="내용" required><%=@post.content%></textarea><br />
+    <% else %>
+        <textarea type="text" name="content" rows=20 placeholder="내용" required></textarea><br />
+    <% end %>
+    <% if @post %>
+        <input type="submit" value="수정"/>
+    <% else %>
+        <input type="submit" value="작성"/>
+    <% end %>
+    </form>
+</section>
