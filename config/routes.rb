@@ -21,9 +21,4 @@ Rails.application.routes.draw do
   #댓글 삭제
   delete '/comment/:comment_id' => 'comment#delete'
 
-
-  #error => static page
-  # get '/404', to: 'error#not_found'
-  # get '/422', to: 'error#unprocessable'
-  # get '/500', to: 'error#internal_server'
 end
