@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   #post
-
   #글 리스트
   get '/post' => 'post#list'
   #글 상세
@@ -15,7 +14,6 @@ Rails.application.routes.draw do
 
 
   #comment
-
   #댓글 작성
   post '/post/:post_id/comment' => 'comment#write'
   #댓글 수정
@@ -25,9 +23,7 @@ Rails.application.routes.draw do
 
 
   #error => static page
-
-  get '/404', to: 'error#not_found'
-  get '/422', to: 'error#unprocessable'
-  get '/500', to: 'error#internal_server'
-
+  # get '/404', to: 'error#not_found'
+  # get '/422', to: 'error#unprocessable'
+  # get '/500', to: 'error#internal_server'
 end
