@@ -8,7 +8,7 @@ class PostController < ApplicationController
 
   #글 상세
   def detail
-    raise Error::BadRequest unless ApplicationHelper.is_number(params[:post_id])
+    raise Error::BadRequest unless is_number(params[:post_id])
     raise Error:: NotFound unless Post.exists?(id: params[:post_id])
     post = Post.find(params[:post_id])
     comments = Comment.where(post_id: params[:post_id])
@@ -17,14 +17,14 @@ class PostController < ApplicationController
 
   # 글 작성
   def write
-    raise Error::BadRequest unless ApplicationHelper.check_not_nil_all(params[:title], params[:creator], params[:content])
+    raise Error::BadRequest unless check_not_nil_all(params[:title], params[:creator], params[:content])
     post = PostService.create(params)
     render json: post, status: :ok
   end
 
   # 글 수정
   def update
-    raise Error::BadRequest unless ApplicationHelper.is_number(params[:post_id])
+    raise Error::BadRequest unless is_number(params[:post_id])
     raise Error:: NotFound unless Post.exists?(id: params[:post_id])
     post = PostService.update(params)
     render json: post, status: :ok
@@ -32,7 +32,7 @@ class PostController < ApplicationController
 
   # 글 삭제
   def delete
-    raise Error::BadRequest unless ApplicationHelper.is_number(params[:post_id])
+    raise Error::BadRequest unless is_number(params[:post_id])
     raise Error:: NotFound unless Post.exists?(id: params[:post_id])
     Post.destroy(params[:post_id])
     render json: {}, status: :ok
